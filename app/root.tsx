@@ -7,7 +7,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="ko">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href={stylesheet} rel="stylesheet" />
         <Meta />
         <Links />
