@@ -33,9 +33,9 @@ const app = new Hono();
 app.use(
   serveStatic({
     onFound: (path, c) => {
-      if (path.substring(0, 22) === './build/client/assets/') {
+      if (/^\.\/build\/client\/assets\//.test(path)) {
         c.header('Cache-Control', 'public, max-age=31536000, immutable');
-      } else if (path.substring(path.length - 5) === '.html') {
+      } else if (path.endsWith('.html')) {
         c.header('Cache-Control', 'public, max-age=300, must-revalidate');
       } else if (path.includes('.')) {
         c.header('Cache-Control', 'public, max-age=3600');
@@ -44,6 +44,16 @@ app.use(
     root: 'build/client',
   }),
 );
+app.get('*', (c, next) => {
+  if (c.req.path.at(-1) === '/' && c.req.path !== '/') {
+    const url = new URL(c.req.url);
+    url.pathname = url.pathname.substring(0, url.pathname.length - 1);
+
+    return c.redirect(url);
+  }
+
+  return next();
+});
 app.use(logger());
 app.use(
   createRequestHandler({ build: () => import('../build/server/index.js') }),
