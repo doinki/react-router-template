@@ -6,6 +6,7 @@ import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
 import { logger } from 'hono/logger';
+import { endTime, startTime, timing } from 'hono/timing';
 import { createRequestHandler } from 'react-router-hono';
 import { gracefulShutdown } from 'server.close';
 import sourceMapSupport from 'source-map-support';
@@ -30,6 +31,7 @@ sourceMapSupport.install({
 
 const app = new Hono();
 
+app.use(timing());
 app.use(
   serveStatic({
     onFound: (path, c) => {
@@ -56,7 +58,16 @@ app.get('*', (c, next) => {
 });
 app.use(logger());
 app.use(
-  createRequestHandler({ build: () => import('../build/server/index.js') }),
+  createRequestHandler({
+    build: () => import('../build/server/index.js'),
+    getLoadContext: (c) => ({
+      c,
+      timing: {
+        endTime,
+        startTime,
+      },
+    }),
+  }),
 );
 
 const hostname = process.env.HOST || '0.0.0.0';

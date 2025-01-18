@@ -1,8 +1,19 @@
 import { readFileSync } from 'node:fs';
 
-import { Hono } from 'hono';
+import { type Context, Hono } from 'hono';
+import { endTime, startTime, timing, type TimingVariables } from 'hono/timing';
 import { createRequestHandler } from 'react-router-hono';
 import sourceMapSupport from 'source-map-support';
+
+declare module 'react-router' {
+  interface AppLoadContext {
+    c: Context;
+    timing: {
+      endTime: typeof endTime;
+      startTime: typeof startTime;
+    };
+  }
+}
 
 sourceMapSupport.install({
   retrieveSourceMap(source) {
@@ -19,12 +30,20 @@ sourceMapSupport.install({
   },
 });
 
-const app = new Hono();
+const app = new Hono<{ Variables: TimingVariables }>();
 
+app.use(timing());
 app.use(
   createRequestHandler({
     // @ts-expect-error
     build: () => import('virtual:react-router/server-build'),
+    getLoadContext: (c) => ({
+      c,
+      timing: {
+        endTime,
+        startTime,
+      },
+    }),
   }),
 );
 
