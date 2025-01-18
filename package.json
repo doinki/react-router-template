@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
+    "@mado/remember": "^0.0.1",
     "@prisma/client": "^6.2.1",
     "@react-router/express": "^7.1.3",
     "@react-router/node": "^7.1.3",
+    "chalk": "^5.4.1",
     "hono": "^4.6.17",
     "isbot": "^5.1.21",
     "react": "^19.0.0",
@@ -21,7 +23,8 @@
     "react-router": "^7.1.3",
     "react-router-hono": "^0.1.0",
     "server.close": "^0.0.2",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.18.1",

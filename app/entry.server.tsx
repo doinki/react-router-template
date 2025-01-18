@@ -12,6 +12,10 @@ import {
   ServerRouter,
 } from 'react-router';
 
+import { init } from './env.server';
+
+init();
+
 export const streamTimeout = 5_000;
 
 export default function handleRequest(
