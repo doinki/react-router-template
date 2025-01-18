@@ -132,3 +132,7 @@ dist
 # React Router
 .react-router/
 build/
+
+# Prisma
+prisma/*.db
+prisma/*.db-journal
