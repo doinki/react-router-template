@@ -35,7 +35,7 @@ app.use(timing());
 app.use(
   serveStatic({
     onFound: (path, c) => {
-      if (/^\.\/build\/client\/assets\//.test(path)) {
+      if (path.substring(0, 22) === './build/client/assets/') {
         c.header('Cache-Control', 'public, max-age=31536000, immutable');
       } else if (path.endsWith('.html')) {
         c.header('Cache-Control', 'public, max-age=300, must-revalidate');
