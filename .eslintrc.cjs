@@ -9,6 +9,7 @@ module.exports = {
   root: true,
   rules: {
     'import/extensions': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
   },
   settings: {
     'import/resolver': {

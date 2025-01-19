@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply flex min-h-screen flex-col;
+  }
+
+  @supports (height: 100svh) {
+    body {
+      @apply min-h-svh;
+    }
+  }
+}
