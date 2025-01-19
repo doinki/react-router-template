@@ -26,6 +26,8 @@
     "react-router-hono": "^0.1.0",
     "server.close": "^0.0.2",
     "source-map-support": "^0.5.21",
+    "spin-delay": "^2.0.1",
+    "tailwind-merge": "^2.6.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@ import {
 
 import { type Route } from './+types/root';
 import { Mado } from './components/Mado';
+import { Progress } from './components/Progress';
 import stylesheet from './tailwind.css?url';
 import { getUserId } from './utils/auth.server';
 
@@ -63,6 +64,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
         </div>
       </header>
       <Outlet />
+      <Progress />
     </>
   );
 }
