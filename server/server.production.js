@@ -59,11 +59,14 @@ app.get('*', (c, next) => {
   return next();
 });
 app.use(logger());
+
+const serverBuild = await import('../build/server/index.js');
 app.use(
   createRequestHandler({
-    build: () => import('../build/server/index.js'),
+    build: serverBuild,
     getLoadContext: (c) => ({
       c,
+      serverBuild,
       timing: {
         endTime,
         startTime,
