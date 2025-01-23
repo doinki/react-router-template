@@ -7,6 +7,7 @@ declare global {
 }
 
 const schema = z.object({
+  DATABASE_URL: z.string(),
   SESSION_SECRET: z.string(),
 });
 
