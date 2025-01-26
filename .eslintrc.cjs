@@ -2,7 +2,7 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ['mado', 'mado/tailwindcss', 'plugin:prettier/recommended'],
+  extends: ['mado', 'plugin:prettier/recommended'],
   parserOptions: {
     project: require.resolve('./tsconfig.json'),
   },

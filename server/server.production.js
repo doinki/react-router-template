@@ -60,6 +60,7 @@ app.get('*', (c, next) => {
 });
 app.use(logger());
 
+// eslint-disable-next-line import/no-unresolved
 const serverBuild = await import('../build/server/index.js');
 app.use(
   createRequestHandler({
