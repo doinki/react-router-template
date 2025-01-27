@@ -17,9 +17,7 @@ export default tseslint.config(
   { ignores: ['.react-router', 'build'] },
   {
     languageOptions: {
-      ecmaVersion: 'latest',
       globals: { ...globals.browser, ...globals.node },
-      sourceType: 'module',
     },
   },
   pluginJs.configs.recommended,
