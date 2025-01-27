@@ -31,6 +31,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.5",
     "@eslint/js": "^9.19.0",
     "@hono/vite-dev-server": "^0.18.1",
     "@react-router/dev": "^7.1.3",

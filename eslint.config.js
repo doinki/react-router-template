@@ -1,3 +1,7 @@
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { includeIgnoreFile } from '@eslint/compat';
 import pluginJs from '@eslint/js';
 import pluginImport from 'eslint-plugin-import';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
@@ -13,8 +17,12 @@ import pluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const gitignorePath = resolve(__dirname, '.gitignore');
+
 export default tseslint.config(
-  { ignores: ['.react-router', 'build'] },
+  includeIgnoreFile(gitignorePath),
   {
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
