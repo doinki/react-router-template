@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { remember } from '@mado/remember';
 import { PrismaClient } from '@prisma/client';
 import chalk from 'chalk';

@@ -1,3 +1,5 @@
+import './tailwind.css';
+
 import {
   Form,
   Link,
@@ -11,7 +13,6 @@ import {
 import { type Route } from './+types/root';
 import { Mado } from './components/Mado';
 import { Progress } from './components/Progress';
-import stylesheet from './tailwind.css?url';
 import { getUserId } from './utils/auth.server';
 
 export async function loader({ context, request }: Route.LoaderArgs) {
@@ -28,7 +29,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link href={stylesheet} rel="stylesheet" />
         <Meta />
         <Links />
       </head>

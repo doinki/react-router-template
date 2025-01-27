@@ -26,7 +26,6 @@ export function Progress() {
       .getAnimations()
       .map(({ finished }) => finished);
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     Promise.allSettled(animationPromises).then(() => {
       if (!delayedPending) setAnimationComplete(true);
     });

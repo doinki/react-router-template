@@ -60,7 +60,6 @@ app.get('*', (c, next) => {
 });
 app.use(logger());
 
-// eslint-disable-next-line import/no-unresolved
 const serverBuild = await import('../build/server/index.js');
 app.use(
   createRequestHandler({
@@ -90,6 +89,6 @@ const server = serve(
   },
 );
 
-server.keepAliveTimeout = 65000;
+server.keepAliveTimeout = 65_000;
 
 gracefulShutdown(server);

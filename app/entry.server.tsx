@@ -16,7 +16,7 @@ import { init } from './env.server';
 
 init();
 
-export const streamTimeout = 5_000;
+export const streamTimeout = 5000;
 
 export default function handleRequest(
   request: Request,
@@ -42,7 +42,6 @@ export default function handleRequest(
       <ServerRouter context={routerContext} url={request.url} />,
       {
         onError(error: unknown) {
-          // eslint-disable-next-line no-param-reassign
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll

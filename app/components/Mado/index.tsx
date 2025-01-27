@@ -53,3 +53,5 @@ export const Mado = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
     );
   },
 );
+
+Mado.displayName = 'Mado';

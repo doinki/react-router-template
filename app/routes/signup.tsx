@@ -124,7 +124,7 @@ export default function Signup() {
           <div className="flex flex-col items-start">
             <label htmlFor={confirmPasswordId}>비밀번호 확인</label>
             <input
-              autoComplete="new-password border"
+              autoComplete="new-password"
               className="border px-2 py-1"
               id={confirmPasswordId}
               name="confirmPassword"
