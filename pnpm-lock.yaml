@@ -124,8 +124,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       eslint-plugin-trim:
-        specifier: ^0.6.0
-        version: 0.6.0(@typescript-eslint/parser@8.21.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2))
+        specifier: ^1.0.0
+        version: 1.0.0(@typescript-eslint/parser@8.21.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2))
       eslint-plugin-typescript-sort-keys:
         specifier: ^3.3.0
         version: 3.3.0(@typescript-eslint/parser@8.21.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3)
@@ -1402,11 +1402,11 @@ packages:
     resolution: {integrity: sha512-DNPHFGCA0/hZIsfODbeLZqaGY/+q3vgtshF85r+YWDNCQ2apd9PNs/zL6ttKm0nD1IFwvxyg3YOTI7FHl4unrw==}
     engines: {node: '>=0.10.0'}
 
-  eslint-plugin-trim@0.6.0:
-    resolution: {integrity: sha512-iuifu8cD6Lvbi50UhrpIhAHJcKaZoJeg+g0EUjgOnxR3rz45sOZbXZGTW/vmXi/eQy3chND1BjEx4pnpJF7dBg==}
+  eslint-plugin-trim@1.0.0:
+    resolution: {integrity: sha512-QCOWqyBihnEzJ6/U0+hWz+p9ikF3WDK/P/1y6Pl62vOu3MUs6OkPAfAV4HZEEcNVG5smkfOWz0c/lMiYKpkZ2g==}
     peerDependencies:
-      '@typescript-eslint/parser': ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      '@typescript-eslint/parser': '>=3'
+      eslint: '>=6'
     peerDependenciesMeta:
       '@typescript-eslint/parser':
         optional: true
@@ -4266,7 +4266,7 @@ snapshots:
       natural-compare: 1.4.0
       requireindex: 1.2.0
 
-  eslint-plugin-trim@0.6.0(@typescript-eslint/parser@8.21.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2)):
+  eslint-plugin-trim@1.0.0(@typescript-eslint/parser@8.21.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.19.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.19.0(jiti@2.4.2)
     optionalDependencies:

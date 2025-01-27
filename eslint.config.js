@@ -70,10 +70,7 @@ export default tseslint.config(
       'typescript-sort-keys/string-enum': 'warn',
     },
   },
-  {
-    plugins: { trim: pluginTrim },
-    rules: { 'trim/argument': 'warn', 'trim/class-name': 'warn' },
-  },
+  pluginTrim.configs.flat.recommended,
   {
     ...pluginReact.configs.flat.recommended,
     rules: {
