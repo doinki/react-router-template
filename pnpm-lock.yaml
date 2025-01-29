@@ -48,8 +48,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(hono@4.6.19)(react-router@7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       react-router-seo:
-        specifier: ^0.1.0
-        version: 0.1.0(react-router@7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        specifier: ^0.1.1
+        version: 0.1.1(react-router@7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       server.close:
         specifier: ^0.0.2
         version: 0.0.2
@@ -156,6 +156,9 @@ importers:
       vite:
         specifier: ^6.0.11
         version: 6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0)
+      vite-env-only:
+        specifier: ^3.0.3
+        version: 3.0.3(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
@@ -2392,8 +2395,8 @@ packages:
       hono: ^4.0.0
       react-router: ^7.0.0
 
-  react-router-seo@0.1.0:
-    resolution: {integrity: sha512-6+Dp86hvzG45WT7NlsJeFZLzxmhnrwxpJC2X94kVF/l9YZ4lbM7LrJSar9t8PTQHxnk9ieIOtDTHrFiN07GWYA==}
+  react-router-seo@0.1.1:
+    resolution: {integrity: sha512-gKcitKzvUqwfZYct/6TE1ypitj56UAzoM++RerYfO9jrQW1jbe3Et33waJg5APEoy5JMvKWkQ1IxMgmv8O+Wgw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react-router: ^7.0.0
@@ -2817,6 +2820,11 @@ packages:
   validate-npm-package-name@5.0.1:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  vite-env-only@3.0.3:
+    resolution: {integrity: sha512-iAb7cTXRrvFShaF1n+G8f6Yqq7sRJcxipNYNQQu0DN5N9P55vJMmLG5lNU5moYGpd+ZH1WhBHdkWi5WjrfImHg==}
+    peerDependencies:
+      vite: '*'
 
   vite-node@3.0.0-beta.2:
     resolution: {integrity: sha512-ofTf6cfRdL30Wbl9n/BX81EyIR5s4PReLmSurrxQ+koLaWUNOEo8E0lCM53OJkb8vpa2URM2nSrxZsIFyvY1rg==}
@@ -5268,7 +5276,7 @@ snapshots:
       hono: 4.6.19
       react-router: 7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  react-router-seo@0.1.0(react-router@7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
+  react-router-seo@0.1.1(react-router@7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
     dependencies:
       react-router: 7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
@@ -5761,6 +5769,19 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validate-npm-package-name@5.0.1: {}
+
+  vite-env-only@3.0.3(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0)):
+    dependencies:
+      '@babel/core': 7.26.7
+      '@babel/generator': 7.26.5
+      '@babel/parser': 7.26.7
+      '@babel/traverse': 7.26.7
+      '@babel/types': 7.26.7
+      babel-dead-code-elimination: 1.0.8
+      micromatch: 4.0.8
+      vite: 6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0)
+    transitivePeerDependencies:
+      - supports-color
 
   vite-node@3.0.0-beta.2(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0):
     dependencies:
