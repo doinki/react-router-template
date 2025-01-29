@@ -11,7 +11,6 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginSortDestructureKeys from 'eslint-plugin-sort-destructure-keys';
 import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
-import pluginTrim from 'eslint-plugin-trim';
 import pluginTypescriptSortKeys from 'eslint-plugin-typescript-sort-keys';
 import pluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
@@ -78,7 +77,6 @@ export default tseslint.config(
       'typescript-sort-keys/string-enum': 'warn',
     },
   },
-  pluginTrim.configs.flat.recommended,
   {
     ...pluginReact.configs.flat.recommended,
     rules: {
