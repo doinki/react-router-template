@@ -15,7 +15,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",
-    "types": ["vite/client"]
+    "types": ["vite/client", "vitest/globals"]
   },
   "exclude": ["build"],
   "include": ["**/*", ".react-router/types/**/*"]

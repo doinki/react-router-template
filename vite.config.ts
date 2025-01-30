@@ -22,5 +22,8 @@ export default defineConfig(({ isSsrBuild }) => {
         injectClientScript: false,
       }),
     ],
+    test: {
+      globals: true,
+    },
   };
 });
