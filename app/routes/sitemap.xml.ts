@@ -1,6 +1,6 @@
 import { generateSitemap, type SeoHandle } from 'react-router-seo';
 
-import { getDomainUrl } from '~/utils/getDomainUrl';
+import { getDomainUrl } from '~/utils/get-domain-url';
 
 import { type Route } from './+types/sitemap.xml';
 

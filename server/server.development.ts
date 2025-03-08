@@ -19,7 +19,7 @@ declare module 'react-router' {
 
 sourceMapSupport.install({
   retrieveSourceMap(source) {
-    const match = source.match(/^file:\/\/(.*)\?t=[.\d]+$/);
+    const match = source.match(/^file:\/\/(.*)\?t=[\d.]+$/);
 
     if (match) {
       return {

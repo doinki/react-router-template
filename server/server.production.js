@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { serve } from '@hono/node-server';
@@ -13,12 +13,12 @@ import { createRequestHandler } from 'react-router-hono';
 import { gracefulShutdown } from 'server.close';
 import sourceMapSupport from 'source-map-support';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-process.chdir(join(__dirname, '..'));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+process.chdir(path.join(__dirname, '..'));
 
 sourceMapSupport.install({
   retrieveSourceMap(source) {
-    const match = source.match(/^file:\/\/(.*)\?t=[.\d]+$/);
+    const match = source.match(/^file:\/\/(.*)\?t=[\d.]+$/);
 
     if (match) {
       return {

@@ -1,4 +1,4 @@
-import { getDomainUrl } from '~/utils/getDomainUrl';
+import { getDomainUrl } from '~/utils/get-domain-url';
 
 describe('getDomainUrl', () => {
   test('should return domain url when both X-Forwarded-Proto and X-Forwarded-Host headers are present', () => {

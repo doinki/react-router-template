@@ -1,4 +1,4 @@
-import { dirname, resolve } from 'node:path';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -16,8 +16,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const gitignorePath = resolve(__dirname, '.gitignore');
+const __dirname = path.dirname(__filename);
+const gitignorePath = path.resolve(__dirname, '.gitignore');
 
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
@@ -56,19 +56,12 @@ export default tseslint.config(
     ...pluginUnicorn.configs.recommended,
     rules: {
       ...pluginUnicorn.configs.recommended.rules,
-      'unicorn/filename-case': ['error', { case: 'camelCase', ignore: ['react-router.config.ts'] }],
-      'unicorn/import-style': [
-        'error',
-        {
-          styles: {
-            'node:path': { default: false, named: true },
-            path: { default: false, named: true },
-          },
-        },
-      ],
+      'unicorn/better-regex': 'warn',
+      'unicorn/filename-case': ['warn', { case: 'kebabCase' }],
       'unicorn/no-null': 'off',
       'unicorn/prefer-string-slice': 'off',
       'unicorn/prevent-abbreviations': 'off',
+      'unicorn/require-post-message-target-origin': 'warn',
     },
   },
   {
