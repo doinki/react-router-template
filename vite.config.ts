@@ -12,6 +12,9 @@ export default defineConfig(({ isSsrBuild }) => {
       // https://tailwindcss.com/docs/compatibility#browser-support
       target: isSsrBuild ? 'node22' : ['chrome111', 'safari16.4', 'firefox128'],
     },
+    optimizeDeps: {
+      exclude: ['bcrypt'],
+    },
     plugins: [
       envOnlyMacros(),
       tsconfigPaths(),
