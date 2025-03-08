@@ -3,8 +3,8 @@ import './tailwind.css';
 import { Form, Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import { type Route } from './+types/root';
-import { Mado } from './components/Mado';
-import { Progress } from './components/Progress';
+import { Mado } from './components/mado';
+import { Progress } from './components/progress';
 import { getUserId } from './utils/auth.server';
 
 export async function loader({ context, request }: Route.LoaderArgs) {

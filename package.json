@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "react-router build",
     "start": "NODE_ENV=production node server/server.production.js",
-    "lint": "eslint",
+    "lint": "eslint --cache",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "@types/source-map-support": "^0.5.10",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.3",
