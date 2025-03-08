@@ -17,8 +17,6 @@ export function init() {
   const parsed = schema.safeParse(process.env);
 
   if (!parsed.success) {
-    throw new Error(
-      JSON.stringify(parsed.error.flatten().fieldErrors, null, 2),
-    );
+    throw new Error(JSON.stringify(parsed.error.flatten().fieldErrors, null, 2));
   }
 }

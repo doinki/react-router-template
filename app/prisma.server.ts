@@ -29,9 +29,7 @@ export const prisma = remember('prisma', () => {
               ? 'redBright'
               : 'red';
 
-    console.info(
-      `prisma:query - ${chalk[color](`${e.duration}ms`)} - ${e.query}`,
-    );
+    console.info(`prisma:query - ${chalk[color](`${e.duration}ms`)} - ${e.query}`);
   });
 
   client.$connect();

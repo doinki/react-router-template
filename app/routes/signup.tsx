@@ -116,9 +116,7 @@ export default function Signup() {
               required
             />
             {fetcher.data?.errors?.password && (
-              <p className="pl-2 text-red-600">
-                {fetcher.data.errors.password}
-              </p>
+              <p className="pl-2 text-red-600">{fetcher.data.errors.password}</p>
             )}
           </div>
           <div className="flex flex-col items-start">
@@ -132,9 +130,7 @@ export default function Signup() {
               required
             />
             {fetcher.data?.errors?.confirmPassword && (
-              <p className="pl-2 text-red-600">
-                {fetcher.data.errors.confirmPassword}
-              </p>
+              <p className="pl-2 text-red-600">{fetcher.data.errors.confirmPassword}</p>
             )}
           </div>
           <div className="flex justify-end">

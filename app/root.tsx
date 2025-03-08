@@ -1,14 +1,6 @@
 import './tailwind.css';
 
-import {
-  Form,
-  Link,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from 'react-router';
+import { Form, Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import { type Route } from './+types/root';
 import { Mado } from './components/Mado';

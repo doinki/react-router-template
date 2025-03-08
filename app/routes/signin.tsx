@@ -47,16 +47,10 @@ export async function action({ request }: Route.ActionArgs) {
     return data({ errors: { email: 'Email not found' } }, { status: 400 });
   }
   if (!user.password) {
-    return data(
-      { errors: { password: 'Password not found' } },
-      { status: 400 },
-    );
+    return data({ errors: { password: 'Password not found' } }, { status: 400 });
   }
   if (!bcrypt.compareSync(fieldValues.password, user.password.hash)) {
-    return data(
-      { errors: { password: 'Password incorrect' } },
-      { status: 400 },
-    );
+    return data({ errors: { password: 'Password incorrect' } }, { status: 400 });
   }
 
   const session = await prisma.session.create({
@@ -119,9 +113,7 @@ export default function Signin() {
               required
             />
             {fetcher.data?.errors?.password && (
-              <p className="pl-2 text-red-600">
-                {fetcher.data.errors.password}
-              </p>
+              <p className="pl-2 text-red-600">{fetcher.data.errors.password}</p>
             )}
           </div>
 

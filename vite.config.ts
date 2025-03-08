@@ -9,7 +9,8 @@ export default defineConfig(({ isSsrBuild }) => {
   return {
     build: {
       sourcemap: isSsrBuild,
-      target: isSsrBuild ? 'node22' : ['chrome120', 'safari16.4', 'firefox128'],
+      // https://tailwindcss.com/docs/compatibility#browser-support
+      target: isSsrBuild ? 'node22' : ['chrome111', 'safari16.4', 'firefox128'],
     },
     plugins: [
       envOnlyMacros(),

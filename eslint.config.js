@@ -33,20 +33,14 @@ export default tseslint.config(
     rules: { '@typescript-eslint/ban-ts-comment': 'off' },
   },
   {
-    extends: [
-      pluginImport.flatConfigs.recommended,
-      pluginImport.flatConfigs.typescript,
-    ],
+    extends: [pluginImport.flatConfigs.recommended, pluginImport.flatConfigs.typescript],
     rules: { 'import/no-cycle': 'error', 'import/no-unresolved': 'off' },
   },
   {
     ...pluginUnicorn.configs['flat/recommended'],
     rules: {
       ...pluginUnicorn.configs['flat/recommended'].rules,
-      'unicorn/filename-case': [
-        'error',
-        { case: 'camelCase', ignore: ['react-router.config.ts'] },
-      ],
+      'unicorn/filename-case': ['error', { case: 'camelCase', ignore: ['react-router.config.ts'] }],
       'unicorn/import-style': [
         'error',
         {

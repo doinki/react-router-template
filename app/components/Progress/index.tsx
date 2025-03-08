@@ -22,9 +22,7 @@ export function Progress() {
       setAnimationComplete(false);
     }
 
-    const animationPromises = ref.current
-      .getAnimations()
-      .map(({ finished }) => finished);
+    const animationPromises = ref.current.getAnimations().map(({ finished }) => finished);
 
     Promise.allSettled(animationPromises).then(() => {
       if (!delayedPending) setAnimationComplete(true);
@@ -32,18 +30,13 @@ export function Progress() {
   }, [delayedPending]);
 
   return (
-    <div
-      aria-hidden={!delayedPending}
-      className="fixed inset-x-0 top-0 z-50 h-[2px]"
-    >
+    <div aria-hidden={!delayedPending} className="fixed inset-x-0 top-0 z-50 h-[2px]">
       <div
         ref={ref}
         className={twMerge(
           'ease h-full origin-left scale-x-0 transform-gpu duration-500',
           transition.state === 'idle' &&
-            (animationComplete
-              ? 'transition-none'
-              : 'scale-x-100 transition duration-200'),
+            (animationComplete ? 'transition-none' : 'scale-x-100 transition duration-200'),
           delayedPending && transition.state === 'submitting' && 'scale-x-50',
           delayedPending && transition.state === 'loading' && 'scale-x-75',
         )}

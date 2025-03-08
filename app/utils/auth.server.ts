@@ -63,9 +63,7 @@ Object.defineProperty(authSessionStorage, 'commitSession', {
 });
 
 export async function getAuthSession(request: Request) {
-  const authSession = await authSessionStorage.getSession(
-    request.headers.get('cookie'),
-  );
+  const authSession = await authSessionStorage.getSession(request.headers.get('cookie'));
 
   return {
     authSession,
