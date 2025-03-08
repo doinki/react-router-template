@@ -1,0 +1,4 @@
+{
+  "*.@(js|jsx|cjs|mjs|ts|tsx)": "eslint --cache --fix",
+  "*.@(json|yml|yaml)": "prettier --write"
+}
