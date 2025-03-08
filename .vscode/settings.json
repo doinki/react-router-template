@@ -4,5 +4,6 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
-  }
+  },
+  "typescript.preferences.autoImportFileExcludePatterns": ["node:test"]
 }

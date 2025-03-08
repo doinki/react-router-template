@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "react-router build",
     "start": "NODE_ENV=production node server/server.production.js",
+    "test": "vitest run",
     "lint": "eslint --cache",
     "typecheck": "react-router typegen && tsc"
   },
